@@ -2,6 +2,10 @@ output "username" {
     value = "${azurerm_container_registry.cr.admin_username}"
 }
 
+output "endpoint" {
+    value = "${azurerm_kubernetes_cluster.k8s.fqdn}"
+}
+
 output "password" {
     value = "${azurerm_container_registry.cr.admin_password}"
 }
