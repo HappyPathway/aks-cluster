@@ -28,10 +28,7 @@ resource "azurerm_kubernetes_cluster" "k8s" {
 
   linux_profile {
     admin_username = "${azurerm_container_registry.cr.admin_username}"
-
-    ssh_key {
-      key_data = "${file("${var.ssh_key_data_file}")}"
-    }
+    admin_password = "${azurerm_container_registry.cr.admin_password}"
   }
 
   agent_pool_profile {
