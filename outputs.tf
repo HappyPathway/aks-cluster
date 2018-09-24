@@ -50,3 +50,7 @@ output "client_key" {
 output "cluster_ca_certificate" {
   value = "${azurerm_kubernetes_cluster.k8s.kube_config.0.cluster_ca_certificate}"
 }
+
+output "kubectl_config" {
+    value = "${azurerm_kubernetes_cluster.k8s.kube_config_raw}"
+}
