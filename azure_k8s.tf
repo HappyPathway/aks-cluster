@@ -28,7 +28,9 @@ resource "azurerm_kubernetes_cluster" "k8s" {
 
   linux_profile {
     admin_username = "${azurerm_container_registry.cr.admin_username}"
-    ssh_key = "${file("${path.module}/files/azure_k8s.pub")}"
+    ssh_key = [
+      "${file("${path.module}/files/azure_k8s.pub")}"
+    ]
   }
 
   agent_pool_profile {
